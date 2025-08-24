@@ -39,9 +39,20 @@ def draw_random_bush():
         random_x,random_y = random_place_bush()
         draw_bush(random_x,random_y)
 
+def draw_soldier(x,y):
+    soldier = pygame.image.load(consts.SOLIDER_IMG)
+    soldier = pygame.transform.scale(soldier, consts.SOLDIER_SIZE)
+    screen.blit(soldier,(x,y))
+
+def draw_flag():
+    flag = pygame.image.load(consts.FLAG_IMG)
+    flag = pygame.transform.scale(flag, consts.FLAG_SIZE)
+    screen.blit(flag, (920, 440))
 
 background()
 draw_random_bush()
+draw_soldier(0,0)
+draw_flag()
 
 while True:
     for event in pygame.event.get():

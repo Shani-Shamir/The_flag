@@ -1,2 +1,4 @@
-# the flag game main
-# hjkl
+import pygame
+import consts
+import Screen
+
