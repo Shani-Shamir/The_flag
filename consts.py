@@ -1,4 +1,4 @@
-TILTLE = "The Flag Game"
+TITLE = "The Flag Game"
 START_MASSAGE = "Welcome to The Flag game. Have Fun!"
 START_LOCATION = (0,0)
 NO_MINE = "ENPTY"
