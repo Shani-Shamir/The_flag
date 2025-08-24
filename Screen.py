@@ -51,11 +51,12 @@ def draw_flag(screen):
     flag = pygame.transform.scale(flag, consts.FLAG_SIZE)
     screen.blit(flag, (920, 440))
 
-def draw_horizontal_lines():
+def draw_horizontal_lines(screen):
     for i in range(20,501,20):
         pygame.draw.line(screen, (consts.GREEN),
-                         [0, 20],
-                         [1000, 20], 1)
+                         [0,i],
+                         [1000, i], 1)
+def draw_vertical_lines(screen)
 
 def draw_web(screen):
     screen.fill((0,0,0))
