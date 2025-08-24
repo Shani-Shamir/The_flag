@@ -32,4 +32,5 @@ while True:
         if keys[pygame.K_DOWN]:
             y += consts.SOLIDER_STEP
         Screen.draw_soldier(screen,x,y)
+
     pygame.display.flip()
