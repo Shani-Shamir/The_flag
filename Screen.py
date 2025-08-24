@@ -46,6 +46,11 @@ def draw_soldier(screen,x,y):
     soldier = pygame.transform.scale(soldier, consts.SOLDIER_SIZE)
     screen.blit(soldier,(x,y))
 
+def draw_night_soldier(screen, x, y):
+    night_soldier = pygame.image.load(consts.SOLIDER_NIGHT)
+    night_soldier = pygame.transform.scale(night_soldier, consts.SOLDIER_SIZE)
+    screen.blit(night_soldier, (x, y))
+
 def draw_flag(screen):
     flag = pygame.image.load(consts.FLAG_IMG)
     flag = pygame.transform.scale(flag, consts.FLAG_SIZE)
@@ -67,7 +72,10 @@ def draw_web(screen):
     draw_horizontal_lines(screen)
     draw_vertical_lines(screen)
 
-
+def draw_mine(screen,x,y):
+    mine = pygame.image.load(consts.MINE_IMG)
+    mine = pygame.transform.scale(mine, consts.MINE_SIZE)
+    screen.blit(mine,(x,y))
 
 # background()
 # draw_random_bush()
