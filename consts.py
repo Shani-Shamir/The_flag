@@ -1,7 +1,21 @@
 TITLE = "The Flag Game"
 START_MASSAGE = "Welcome to The Flag game. Have Fun!"
 START_LOCATION = (0,0)
+MINE = "MINE"
 NO_MINE = "EMPTY"
+
+SOLIDER_WIDTH = 40
+SOLIDER_HEIGHT = 80
+FLAG_WIDTH = 80
+FLAG_HEIGHT = 60
+MINE_WIDTH = 60
+MINE_HEIGHT = 20
+
+ROW = 25
+COL = 50
+
+WINDOW_HEIGHT = 500
+WINDOW_WIDTH = 1000
 
 GREEN = (159,226,191)
 
@@ -9,7 +23,6 @@ MOVE_LEFT = "left"
 MOVE_RIGHT = "right"
 MOVE_UP = "up"
 MOVE_DOWN = "down"
-
 
 EXPLOTION_IMG = "explotion.png"
 FLAG_IMG = "flag.png"
@@ -20,5 +33,7 @@ SNAKE_IMG = "snake.png"
 SOLIDER_IMG = "soldier.png"
 SOLIDER_2_IMG = "solider_2.png"
 SOLIDER_NIGTH = "solider_nigth.png"
+
+FLAG_LOCATION = (WINDOW_WIDTH,WINDOW_HEIGHT)
 
 
