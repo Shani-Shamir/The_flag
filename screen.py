@@ -5,7 +5,7 @@ import random
 import consts
 
 pygame.init()
-screen = pygame.display.set_mode((1000,800))
+screen = pygame.display.set_mode((consts.WINDOW_WIDTH,consts.WINDOW_HEIGHT))
 pygame.display.set_caption(consts.TITLE)
 
 def background():
@@ -20,23 +20,34 @@ def draw_bush(x,y):
 def create_lists():
     list_x = []
     list_y = []
-    for i in range(0, 1001, 20):
+    for i in range(0, 981, 20):
         list_x.append(i)
-    for i in range(0, 501, 20):
+    for i in range(0, 481, 20):
         list_y.append(i)
     return list_x,list_y
 
-def draw_random_bushes():
+def random_place_bush():
     x,y = create_lists()
-    random_place = (random.choice(x),random.choice(y))
+    random_x = random.choice(x)
+    random_y = random.choice(y)
+    x.remove(random_x)
+    y.remove(random_y)
+    return random_x,random_y
+
+def draw_random_bush():
+    for i in range(20):
+        random_x,random_y = random_place_bush()
+        draw_bush(random_x,random_y)
+
+
+background()
+draw_random_bush()
 
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
-    background()
-    draw_bush(60,60)
     pygame.display.flip()
 
 
