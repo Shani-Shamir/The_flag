@@ -10,6 +10,15 @@ def create_screen():
     pygame.display.set_caption(consts.TITLE)
     return screen
 
+def text(screen):
+    font = pygame.font.SysFont('Arial', 20, bold=True)
+    img1 = font.render(consts.START_MASSAGE1, True, (255, 255, 255))
+    img2 = font.render(consts.START_MASSAGE2, True, (255, 255, 255))
+    screen.blit(img1, (40,20))
+    screen.blit(img2, (40,40))
+
+
+
 def background(screen):
     screen.fill(consts.GREEN)
 
@@ -37,6 +46,7 @@ def random_place_bush():
     return random_x,random_y
 
 def draw_random_bush(screen):
+    background(screen)
     for i in range(20):
         random_x,random_y = random_place_bush()
         draw_bush(screen,random_x,random_y)

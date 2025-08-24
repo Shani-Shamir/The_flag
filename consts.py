@@ -1,5 +1,6 @@
 TITLE = "The Flag Game"
-START_MASSAGE = "Welcome to The Flag game. Have Fun!"
+START_MASSAGE1 = ("Welcome to The Flag game.")
+START_MASSAGE2 = ("Have Fun!")
 START_LOCATION = (0,0)
 MINE = "MINE"
 NO_MINE = "EMPTY"
