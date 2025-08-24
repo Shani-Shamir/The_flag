@@ -37,7 +37,7 @@ MINE_IMG = "mine.png"
 SNAKE_IMG = "snake.png"
 SOLIDER_IMG = "soldier.png"
 SOLIDER_2_IMG = "solider_2.png"
-SOLIDER_NIGTH = "solider_nigth.png"
+SOLIDER_NIGHT = "solider_night.png"
 
 FLAG_LOCATION = (WINDOW_WIDTH,WINDOW_HEIGHT)
 
