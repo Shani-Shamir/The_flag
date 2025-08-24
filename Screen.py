@@ -56,14 +56,17 @@ def draw_horizontal_lines(screen):
         pygame.draw.line(screen, (consts.GREEN),
                          [0,i],
                          [1000, i], 1)
-def draw_vertical_lines(screen)
+def draw_vertical_lines(screen):
+    for i in range(20,1001,20):
+        pygame.draw.line(screen, (consts.GREEN),
+                         [i, 0],
+                         [i, 500], 1)
 
 def draw_web(screen):
-    screen.fill((0,0,0))
+    screen.fill((consts.BLACK))
+    draw_horizontal_lines(screen)
+    draw_vertical_lines(screen)
 
-    pygame.draw.line(screen, (consts.GREEN),
-                     [0, 20],
-                     [1000, 20], 1)
 
 
 # background()
