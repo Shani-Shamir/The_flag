@@ -1,7 +1,7 @@
 #יצירת מסך
 import pygame
 from sys import exit
-
+import random
 import consts
 
 pygame.init()
@@ -13,8 +13,9 @@ def background():
 
 def draw_bush(x,y):
     bush = pygame.image.load(consts.GRASS_IMG)
+    bush_size = (60,60)
+    bush = pygame.transform.scale(bush, bush_size)
     screen.blit(bush,(x,y))
-
 
 
 while True:
