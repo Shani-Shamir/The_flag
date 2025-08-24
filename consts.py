@@ -1,7 +1,7 @@
 TITLE = "The Flag Game"
 START_MASSAGE = "Welcome to The Flag game. Have Fun!"
 START_LOCATION = (0,0)
-NO_MINE = "ENPTY"
+NO_MINE = "EMPTY"
 
 GREEN = (159,226,191)
 
