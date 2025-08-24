@@ -2,11 +2,11 @@ import consts
 import random
 import pygame
 import Screen
-matrix = []
+matrix1 = []
 
 for i in range(consts.ROW):
     for j in range(consts.COL) :
-        matrix.append(consts.NO_MINE)
+        matrix1.append(consts.NO_MINE)
 
 # def random_place_mine():
 #     count = 0
@@ -30,20 +30,19 @@ def create_mine_lists():
 
 def random_place_mine():
     row,col = create_mine_lists()
-    random_x = random.choice(row)
-    random_y = random.choice(col)
+    random_x = random.choice(col)
+    random_y = random.choice(row)
     row.remove(random_x)
     col.remove(random_y)
     return random_x,random_y
 
-def add_random_mine_matrix():
+def add_random_mine_matrix(matrix):
     for i in range(20):
-        random_row,random_col = random_place_mine()
+        random_col,random_row = random_place_mine()
         matrix[random_row][random_col] = consts.MINE
+    return matrix
 
-create_mine_lists()
-random_place_mine()
-add_random_mine_matrix()
+matrix = add_random_mine_matrix(matrix1)
 print(matrix)
 
 
