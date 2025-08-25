@@ -1,6 +1,8 @@
 TITLE = "The Flag Game"
 START_MASSAGE1 = ("Welcome to The Flag game.")
 START_MASSAGE2 = ("Have Fun!")
+WIN_MASSAGE = "You Won!"
+LOSE_MASSAGE = "You Lost"
 START_LOCATION = (0,0)
 MINE = "MINE"
 NO_MINE = "EMPTY"
