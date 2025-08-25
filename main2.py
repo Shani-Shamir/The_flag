@@ -8,7 +8,6 @@ screen = Screen.create_screen()
 screen2 = Screen.draw_random_bush(screen)
 Screen.draw_soldier(screen2,0,0)
 Screen.text(screen2)
-
 Screen.draw_flag(screen2)
 # Screen.draw_web(screen)
 
