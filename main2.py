@@ -2,6 +2,9 @@ import pygame
 import consts
 import Screen
 import game_field
+import time
+
+from Screen import draw_night_soldier
 
 screen = Screen.create_screen()
 screen2 = Screen.draw_random_bush(screen)
@@ -55,6 +58,10 @@ while True:
                     soldier.y = 420
             if event.key == pygame.K_KP_ENTER:
                 Screen.draw_random_mines(screen2, game_field.matrix)
+                draw_night_soldier(screen2,soldier.x,soldier.y)
+                time.sleep(1)
+                screen2.blit(pic_screenshot, (0, 0))
+
 
         screen2.blit(pic_screenshot, (0, 0))
         Screen.draw_soldier(screen2, soldier.x, soldier.y)
