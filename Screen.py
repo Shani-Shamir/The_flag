@@ -77,7 +77,7 @@ def draw_vertical_lines(screen):
         pygame.draw.line(screen, (consts.GREEN),
                          [i, 0],
                          [i, 500], 1)
-
+#
 def draw_web(screen):
     screen.fill((consts.BLACK))
     draw_horizontal_lines(screen)

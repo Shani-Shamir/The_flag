@@ -16,7 +16,7 @@ def random_place_mine(matrix):
         if matrix[random_row][random_col] == consts.NO_MINE:
             matrix[random_row][random_col] = consts.MINE
             count += 1
-
+#
 def player_move(screen):
     x, y = 0, 0
     keys = pygame.key.get_pressed()

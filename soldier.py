@@ -7,3 +7,4 @@ def draw_soldier():
     soldier = pygame.transform.scale(soldier, consts.SOLDIER_SIZE)
     Screen.screen.blit(soldier,(100,100))
 
+#
