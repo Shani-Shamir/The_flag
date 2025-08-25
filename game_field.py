@@ -1,7 +1,10 @@
+from pygame.examples.go_over_there import running
+
 import consts
 import random
 import pygame
 import Screen
+from Screen import draw_soldier
 
 matrix = [[consts.NO_MINE for _ in range(consts.COL)] for _ in range(consts.ROW)]
 
@@ -29,3 +32,31 @@ def player_move(screen):
 pygame.display.flip()
 
 def touched_flag(x,y):
+    return x,y == consts.FLAG_LOCATION
+
+def touched_mine(x,y):
+    return x,y ==
+
+running = True
+if touched_flag(x,y):
+    running = False
+
+if touched_mine(x,y):
+    running = False
+
+# pygame.display.flip()
+
+# while running:
+#     x, y = 0, 0
+#     keys = pygame.key.get_pressed()
+#     if keys[pygame.K_RIGHT] and 0 < x < consts.WINDOW_WIDTH:
+#         x += consts.SOLIDER_STEP
+#     if keys[pygame.K_LEFT] and 0 < x < consts.WINDOW_WIDTH:
+#         x -= consts.SOLIDER_STEP
+#     if keys[pygame.K_UP] and 0 < y < consts.WINDOW_HEIGHT:
+#         y -= consts.SOLIDER_STEP
+#     if keys[pygame.K_DOWN] and 0 < y < consts.WINDOW_HEIGHT:
+#         y += consts.SOLIDER_STEP
+#     if keys == pygame.QUIT:
+#         pygame.quit()
+#         exit()
