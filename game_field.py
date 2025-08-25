@@ -17,13 +17,13 @@ def random_place_mine(matrix):
 def player_move(screen):
     x, y = 0, 0
     keys = pygame.key.get_pressed()
-    if keys[pygame.K_RIGHT]:
+    if keys[pygame.K_RIGHT] and 0 < x < consts.WINDOW_WIDTH:
         x += consts.SOLIDER_STEP
-    if keys[pygame.K_LEFT]:
+    if keys[pygame.K_LEFT] and 0 < x < consts.WINDOW_WIDTH:
         x -= consts.SOLIDER_STEP
-    if keys[pygame.K_UP]:
+    if keys[pygame.K_UP] and 0 < y < consts.WINDOW_HEIGHT :
         y -= consts.SOLIDER_STEP
-    if keys[pygame.K_DOWN]:
+    if keys[pygame.K_DOWN] and 0 < y < consts.WINDOW_HEIGHT:
         y += consts.SOLIDER_STEP
     Screen.draw_soldier(screen,x,y)
 pygame.display.flip()
