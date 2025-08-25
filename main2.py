@@ -1,4 +1,6 @@
 import pygame
+
+import Soldier
 import consts
 import Screen
 import game_field
@@ -35,14 +37,16 @@ while True:
         # keys = pygame.key.get_pressed()
         if event.type == pygame.KEYDOWN:
             screen2.blit(screen2, (0, 0))
-            if event.key == pygame.K_RIGHT and 0 <= soldier.x <= consts.WINDOW_WIDTH:
+            if event.key == pygame.K_RIGHT and 0 <= soldier.x <= consts.WINDOW_WIDTH  :
                 soldier.x += consts.SOLIDER_STEP
-            if event.key == pygame.K_LEFT and 0 <= soldier.x <= consts.WINDOW_WIDTH:
+            if event.key == pygame.K_LEFT and 0 <= soldier.x <= consts.WINDOW_WIDTH  :
                 soldier.x -= consts.SOLIDER_STEP
-            if event.key == pygame.K_UP and 0 <= soldier.y <= consts.WINDOW_HEIGHT:
+            if event.key == pygame.K_UP and 0<= soldier.y <= consts.WINDOW_HEIGHT :
                 soldier.y -= consts.SOLIDER_STEP
             if event.key == pygame.K_DOWN and 0 <= soldier.y <= consts.WINDOW_HEIGHT:
                 soldier.y += consts.SOLIDER_STEP
+            if event.key == pygame.K_KP_ENTER:
+                Screen.draw_random_mines(screen2, game_field.matrix)
 
         screen2.blit(pic_screenshot, (0, 0))
         Screen.draw_soldier(screen2, soldier.x, soldier.y)
