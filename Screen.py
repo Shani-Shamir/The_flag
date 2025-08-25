@@ -3,6 +3,8 @@ import pygame
 from sys import exit
 import random
 import consts
+import game_field
+
 
 def create_screen():
     pygame.init()
@@ -87,6 +89,14 @@ def draw_mine(screen,x,y):
     mine = pygame.image.load(consts.MINE_IMG)
     mine = pygame.transform.scale(mine, consts.MINE_SIZE)
     screen.blit(mine,(x,y))
+
+def draw_random_mines(screen,matrix):
+    draw_web(screen)
+    draw_night_soldier(screen,0,0)
+    list_mines = game_field.random_place_mine(matrix)
+    for i in range(len(list_mines)):
+        draw_mine(screen, list_mines[i][0] , list_mines[i][1])
+
 
 # background()
 # draw_random_bush()
