@@ -7,11 +7,10 @@ screen = Screen.create_screen()
 screen2 = Screen.draw_random_bush(screen)
 Screen.text(screen2)
 Screen.draw_flag(screen2)
-Screen.screenshot(screen2)
 
+Screen.screenshot(screen2)
 pic_screenshot = pygame.image.load("screenshot.jpg")
-screen2.blit(pic_screenshot, (0, 0))
-# Screen.draw_web(screen)
+# screen2.blit(pic_screenshot, (0, 0))
 
 # while True:
 #     for event in pygame.event.get():
@@ -34,14 +33,26 @@ while True:
         # keys = pygame.key.get_pressed()
         if event.type == pygame.KEYDOWN:
             screen2.blit(screen2, (0, 0))
-            if event.key == pygame.K_RIGHT and 0 <= soldier.x <= consts.WINDOW_WIDTH  :
-                soldier.x += consts.SOLIDER_STEP
-            if event.key == pygame.K_LEFT and 0 <= soldier.x <= consts.WINDOW_WIDTH  :
-                soldier.x -= consts.SOLIDER_STEP
-            if event.key == pygame.K_UP and 0<= soldier.y <= consts.WINDOW_HEIGHT :
-                soldier.y -= consts.SOLIDER_STEP
-            if event.key == pygame.K_DOWN and 0 <= soldier.y <= consts.WINDOW_HEIGHT:
-                soldier.y += consts.SOLIDER_STEP
+            if event.key == pygame.K_RIGHT:
+                if 0 <= soldier.x <= consts.WINDOW_WIDTH-40:
+                    soldier.x += consts.SOLIDER_STEP
+                else:
+                    soldier.x = 950
+            if event.key == pygame.K_LEFT:
+                if 0 <= soldier.x <= consts.WINDOW_WIDTH:
+                    soldier.x -= consts.SOLIDER_STEP
+                else:
+                    soldier.x = 0
+            if event.key == pygame.K_UP:
+                if 0<= soldier.y <= consts.WINDOW_HEIGHT :
+                    soldier.y -= consts.SOLIDER_STEP
+                else:
+                    soldier.y = 0
+            if event.key == pygame.K_DOWN:
+                if 0 <= soldier.y < consts.WINDOW_HEIGHT-60:
+                    soldier.y += consts.SOLIDER_STEP
+                else:
+                    soldier.y = 420
             if event.key == pygame.K_KP_ENTER:
                 Screen.draw_random_mines(screen2, game_field.matrix)
 

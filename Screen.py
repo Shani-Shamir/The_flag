@@ -1,4 +1,3 @@
-#יצירת מסך
 import pygame
 from sys import exit
 import random
@@ -18,8 +17,6 @@ def text(screen):
     img2 = font.render(consts.START_MASSAGE2, True, (255, 255, 255))
     screen.blit(img1, (40,20))
     screen.blit(img2, (40,40))
-
-
 
 def background(screen):
     screen.fill(consts.GREEN)
@@ -79,7 +76,7 @@ def draw_vertical_lines(screen):
         pygame.draw.line(screen, (consts.GREEN),
                          [i, 0],
                          [i, 500], 1)
-#
+
 def draw_web(screen):
     screen.fill((consts.BLACK))
     draw_horizontal_lines(screen)
@@ -96,15 +93,6 @@ def draw_random_mines(screen,matrix):
     list_mines = game_field.random_place_mine(matrix)
     for i in range(len(list_mines)):
         draw_mine(screen, list_mines[i][0] , list_mines[i][1])
-
-# def screenshot(screen):
-#     save_file = "screenshot.png"
-#     pygame.image.save(screen,save_file)
-#
-# def get_screenshot(key,cache):
-#     if not key in cache:
-#         cache[key] = pygame.image.load(key).convert_alpha()
-#     return cache
 
 def screenshot(screen):
     rect = pygame.Rect(0,0,1000,500)
