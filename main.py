@@ -49,6 +49,7 @@ def main():
                     Screen.draw_random_mines(pic_screenshot, game_field.matrix,soldier.x,soldier.y)
                     pygame.time.delay(1000)
                     screen2.blit(pic_screenshot, (0, 0))
+
                 Soldier.update_soldier_place()
 
                 screen2.blit(pic_screenshot, (0, 0))
