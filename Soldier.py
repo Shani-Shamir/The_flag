@@ -87,10 +87,10 @@ def soldier_touch_mine():
     return False
 
 def solider_touch_flag():
-    for row in range(consts.ROW):
-        for col in range(consts.COL):
-            if matrix[row][col] == consts.FLAG:
-                if matrix_soldier[row][col] != consts.NO_MINE:
+    for row in range(22,25):
+        for col in range(46,50):
+            if matrix_soldier[row][col] == consts.BODY:
+                # if matrix_soldier[row][col] == consts.BODY or matrix_soldier[row][col] == consts.BODY:
                     return True
     return False
 

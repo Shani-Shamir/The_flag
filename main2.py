@@ -1,4 +1,6 @@
 import pygame
+
+import Soldier
 import consts
 import Screen
 import game_field
@@ -58,14 +60,18 @@ while True:
                 else:
                     soldier.y = 420
             if event.key == pygame.K_RETURN:
-                screen3 = Screen.draw_random_mines(pic_screenshot, game_field.matrix,soldier.x,soldier.y)
+                Screen.draw_random_mines(pic_screenshot, game_field.matrix,soldier.x,soldier.y,screen2,pic_screenshot)
             # screen2.blit(screen2, (0, 0))
+            Soldier.update_soldier_place()
 
             screen2.blit(pic_screenshot, (0, 0))
             Screen.draw_soldier(screen2, soldier.x, soldier.y)
 
 
-        pygame.display.update()
+    if Soldier.solider_touch_flag():
+        Screen.win_text(screen2)
+
+    pygame.display.update()
         #
         # if event.type == pygame.KEYUP:
         #     screen2.blit(screen2, (0, 0))
