@@ -94,13 +94,15 @@ def draw_random_mines(screen,matrix,x,y,screen2,pic_screenshot):
     for i in range(len(list_mines)):
         draw_mine(screen, list_mines[i][0] , list_mines[i][1])
     pygame.time.wait(1000)
-    screen2.blit(pic_screenshot, (0, 0))
-
 
 def screenshot(screen):
     rect = pygame.Rect(0,0,1000,500)
     sub = screen.subsurface(rect)
     pygame.image.save(sub, "screenshot.jpg")
+def screenshot2(screen):
+    rect = pygame.Rect(0,0,1000,500)
+    sub = screen.subsurface(rect)
+    pygame.image.save(sub, "screenshot.jpg2")
 
 def win_text(screen):
     font = pygame.font.SysFont('Arial', 50, bold=True)
@@ -112,16 +114,6 @@ def lose_text(screen):
     img1 = font.render(consts.LOSE_MASSAGE, True, (0, 0, 0))
     screen.blit(img1, (100, 100))
 
-# background()
-# draw_random_bush()
-# draw_soldier(0,0)
-# draw_flag()
-# draw_web()
-# while True:
-#     for event in pygame.event.get():
-#         if event.type == pygame.QUIT:
-#             pygame.quit()
-#             exit()
-#     pygame.display.flip()
+
 
 
