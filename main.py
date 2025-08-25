@@ -3,8 +3,6 @@ import Soldier
 import consts
 import Screen
 import game_field
-import time
-from Screen import draw_night_soldier
 
 def main():
     screen = Screen.create_screen()
@@ -14,21 +12,19 @@ def main():
 
     Screen.screenshot(screen2)
     pic_screenshot = pygame.image.load("screenshot.jpg")
-    # screen2.blit(pic_screenshot, (0, 0))
 
     soldier = pygame.Rect(0,0,consts.WINDOW_WIDTH,consts.WINDOW_HEIGHT)
     soldier.x = 0
     soldier.y = 0
     Screen.draw_soldier(screen2, soldier.x, soldier.y)
     flag = True
-    while flag == True:
+    while flag:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 exit()
 
             if event.type == pygame.KEYDOWN:
-                screen2.blit(screen2, (0, 0))
                 if event.key == pygame.K_RIGHT:
                     if 0 <= soldier.x <= consts.WINDOW_WIDTH-40:
                         soldier.x += consts.SOLIDER_STEP
@@ -50,19 +46,21 @@ def main():
                     else:
                         soldier.y = 420
                 if event.key == pygame.K_RETURN:
-                    Screen.draw_random_mines(pic_screenshot, game_field.matrix,soldier.x,soldier.y,screen2,pic_screenshot)
-                    screen2.blit(screen2, (0, 0))
+                    Screen.draw_random_mines(pic_screenshot, game_field.matrix,soldier.x,soldier.y)
+                    pygame.time.delay(1000)
+                    screen2.blit(pic_screenshot, (0, 0))
                 Soldier.update_soldier_place()
 
                 screen2.blit(pic_screenshot, (0, 0))
                 Screen.draw_soldier(screen2, soldier.x, soldier.y)
 
-
         if Soldier.solider_touch_flag():
             Screen.win_text(screen2)
+            pygame.time.delay(3000)
             flag = False
         if Soldier.soldier_touch_mine():
             Screen.lose_text(screen2)
+            pygame.time.delay(3000)
             flag = False
 
         pygame.display.update()

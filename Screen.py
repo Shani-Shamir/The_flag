@@ -71,6 +71,7 @@ def draw_horizontal_lines(screen):
         pygame.draw.line(screen, (consts.GREEN),
                          [0,i],
                          [1000, i], 1)
+
 def draw_vertical_lines(screen):
     for i in range(20,1001,20):
         pygame.draw.line(screen, (consts.GREEN),
@@ -87,22 +88,18 @@ def draw_mine(screen,x,y):
     mine = pygame.transform.scale(mine, consts.MINE_SIZE)
     screen.blit(mine,(x,y))
 
-def draw_random_mines(screen,matrix,x,y,screen2,pic_screenshot):
+def draw_random_mines(screen,matrix,x,y):
     draw_web(screen)
     draw_night_soldier(screen,x,y)
     list_mines = game_field.random_place_mine(matrix)
     for i in range(len(list_mines)):
         draw_mine(screen, list_mines[i][0] , list_mines[i][1])
-    pygame.time.wait(1000)
+    return screen
 
 def screenshot(screen):
     rect = pygame.Rect(0,0,1000,500)
     sub = screen.subsurface(rect)
     pygame.image.save(sub, "screenshot.jpg")
-def screenshot2(screen):
-    rect = pygame.Rect(0,0,1000,500)
-    sub = screen.subsurface(rect)
-    pygame.image.save(sub, "screenshot.jpg2")
 
 def win_text(screen):
     font = pygame.font.SysFont('Arial', 50, bold=True)

@@ -1,22 +1,7 @@
 import consts
 import pygame
-import Screen
-import game_field
-from consts import SOLDIER
 from game_field import matrix_soldier
 from game_field import matrix
-
-# soldier_body = {"head" : None,
-#                 "neck" : None,
-#                 "stomach" : None,
-#                 "legs" : None
-# }
-#
-# # starting position screen
-# soldier_body["head"] = [(0,0) , (20,0)]
-# soldier_body["neck"] = [(0,20) , (20,20)]
-# soldier_body["stomach"] = [(0,40) , (20,40)]
-# soldier_body["legs"] = [(0,60) , (20,60)]
 
 # starting position matrix
 for i in range(4):
