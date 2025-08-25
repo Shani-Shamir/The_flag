@@ -71,4 +71,5 @@ while running :
         exit()
     if touched_flag(x,y):
         running = False
+#
 
