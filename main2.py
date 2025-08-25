@@ -26,6 +26,7 @@ pic_screenshot = pygame.image.load("screenshot.jpg")
 soldier = pygame.Rect(0,0,consts.WINDOW_WIDTH,consts.WINDOW_HEIGHT)
 soldier.x = 0
 soldier.y = 0
+Screen.draw_soldier(screen2, soldier.x, soldier.y)
 
 while True:
     for event in pygame.event.get():
@@ -56,15 +57,13 @@ while True:
                     soldier.y += consts.SOLIDER_STEP
                 else:
                     soldier.y = 420
-            if event.key == pygame.K_KP_ENTER:
-                Screen.draw_random_mines(screen2, game_field.matrix)
-                draw_night_soldier(screen2,soldier.x,soldier.y)
-                time.sleep(1)
-                screen2.blit(pic_screenshot, (0, 0))
+            if event.key == pygame.K_RETURN:
+                screen3 = Screen.draw_random_mines(pic_screenshot, game_field.matrix,soldier.x,soldier.y)
 
+            # screen2.blit(screen2, (0, 0))
 
-        screen2.blit(pic_screenshot, (0, 0))
-        Screen.draw_soldier(screen2, soldier.x, soldier.y)
+            screen2.blit(pic_screenshot, (0, 0))
+            Screen.draw_soldier(screen2, soldier.x, soldier.y)
 
 
         pygame.display.update()

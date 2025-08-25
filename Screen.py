@@ -87,12 +87,15 @@ def draw_mine(screen,x,y):
     mine = pygame.transform.scale(mine, consts.MINE_SIZE)
     screen.blit(mine,(x,y))
 
-def draw_random_mines(screen,matrix):
+def draw_random_mines(screen,matrix,x,y):
     draw_web(screen)
-    draw_night_soldier(screen,0,0)
+    draw_night_soldier(screen,x,y)
     list_mines = game_field.random_place_mine(matrix)
     for i in range(len(list_mines)):
         draw_mine(screen, list_mines[i][0] , list_mines[i][1])
+    pygame.time.wait(1000)
+
+    return screen
 
 def screenshot(screen):
     rect = pygame.Rect(0,0,1000,500)
