@@ -50,6 +50,7 @@ def draw_random_bush(screen):
     for i in range(20):
         random_x,random_y = random_place_bush()
         draw_bush(screen,random_x,random_y)
+    return screen
 
 def draw_soldier(screen,x,y):
     soldier = pygame.image.load(consts.SOLIDER_IMG)
