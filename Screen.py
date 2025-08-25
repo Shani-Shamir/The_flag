@@ -102,9 +102,15 @@ def screenshot(screen):
     sub = screen.subsurface(rect)
     pygame.image.save(sub, "screenshot.jpg")
 
+def win_text(screen):
+    font = pygame.font.SysFont('Arial', 50, bold=True)
+    img1 = font.render(consts.WIN_MASSAGE, True, (0, 0, 0))
+    screen.blit(img1, (100, 100))
 
-
-
+def lose_text(screen):
+    font = pygame.font.SysFont('Arial', 50, bold=True)
+    img1 = font.render(consts.LOSE_MASSAGE, True, (0, 0, 0))
+    screen.blit(img1, (100, 100))
 
 # background()
 # draw_random_bush()
