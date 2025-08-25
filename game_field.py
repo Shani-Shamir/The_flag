@@ -1,11 +1,12 @@
-
 import consts
 import random
-
 
 matrix = [[consts.NO_MINE for _ in range(consts.COL)] for _ in range(consts.ROW)]
 matrix_soldier = [[consts.NO_MINE for _ in range(consts.COL)] for _ in range(consts.ROW)]
 
+for row in range(22,25):
+    for col in range(46,50):
+        matrix[row][col] = consts.FLAG
 
 def random_place_mine(matrix):
     count = 0

@@ -95,4 +95,3 @@ def solider_touch_flag():
     return False
 
 
-update_soldier_place()

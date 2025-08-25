@@ -1,11 +1,8 @@
 import pygame
-
-import Soldier
 import consts
 import Screen
 import game_field
 
-# שינוי
 screen = Screen.create_screen()
 screen2 = Screen.draw_random_bush(screen)
 Screen.text(screen2)
