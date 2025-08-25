@@ -9,8 +9,9 @@ screen2 = Screen.draw_random_bush(screen)
 Screen.text(screen2)
 Screen.draw_flag(screen2)
 Screen.screenshot(screen2)
-x = pygame.image.load("screenshot.jpg")
-screen2.blit(x, (0, 0))
+
+pic_screenshot = pygame.image.load("screenshot.jpg")
+screen2.blit(pic_screenshot, (0, 0))
 # Screen.draw_web(screen)
 
 # while True:
@@ -42,7 +43,8 @@ while True:
                 soldier.y -= consts.SOLIDER_STEP
             if event.key == pygame.K_DOWN and 0 <= soldier.y <= consts.WINDOW_HEIGHT:
                 soldier.y += consts.SOLIDER_STEP
-        screen2.blit(x, (0, 0))
+
+        screen2.blit(pic_screenshot, (0, 0))
         Screen.draw_soldier(screen2, soldier.x, soldier.y)
 
 

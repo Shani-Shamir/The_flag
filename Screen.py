@@ -97,15 +97,6 @@ def draw_random_mines(screen,matrix):
     for i in range(len(list_mines)):
         draw_mine(screen, list_mines[i][0] , list_mines[i][1])
 
-# def screenshot(screen):
-#     save_file = "screenshot.png"
-#     pygame.image.save(screen,save_file)
-#
-# def get_screenshot(key,cache):
-#     if not key in cache:
-#         cache[key] = pygame.image.load(key).convert_alpha()
-#     return cache
-
 def screenshot(screen):
     rect = pygame.Rect(0,0,1000,500)
     sub = screen.subsurface(rect)
