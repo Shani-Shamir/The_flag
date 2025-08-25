@@ -59,7 +59,6 @@ while True:
                     soldier.y = 420
             if event.key == pygame.K_RETURN:
                 screen3 = Screen.draw_random_mines(pic_screenshot, game_field.matrix,soldier.x,soldier.y)
-
             # screen2.blit(screen2, (0, 0))
 
             screen2.blit(pic_screenshot, (0, 0))
