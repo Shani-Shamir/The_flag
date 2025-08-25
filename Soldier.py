@@ -81,7 +81,18 @@ def update_soldier_place():
 def soldier_touch_mine():
     for row in range (consts.ROW):
         for col in range(consts.COL):
-            if matrix[row][col]
+            if matrix[row][col] == consts.MINE:
+                if matrix_soldier[row][col] == consts.FEET:
+                    return True
+    return False
+
+def solider_touch_flag():
+    for row in range(consts.ROW):
+        for col in range(consts.COL):
+            if matrix[row][col] == consts.FLAG:
+                if matrix_soldier[row][col] != consts.NO_MINE:
+                    return True
+    return False
 
 
 update_soldier_place()
